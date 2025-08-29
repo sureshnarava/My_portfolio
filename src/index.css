@@ -1,71 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Cyber DevOps Portfolio Design System */
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
 
 @layer base {
   :root {
-    /* Cyber Dark Theme */
-    --background: 220 27% 4%;
-    --foreground: 180 100% 90%;
-    
-    /* Glass Cards */
-    --card: 220 27% 8%;
-    --card-foreground: 180 100% 95%;
-    --card-glass: 220 27% 12%;
-    
-    /* Cyber Accents */
-    --primary: 180 100% 50%;
-    --primary-foreground: 220 27% 4%;
-    --primary-glow: 180 100% 70%;
-    
-    /* Neon Green */
-    --secondary: 120 100% 50%;
-    --secondary-foreground: 220 27% 4%;
-    --secondary-glow: 120 100% 70%;
-    
-    /* Purple Highlights */
-    --accent: 270 100% 70%;
-    --accent-foreground: 220 27% 4%;
-    --accent-glow: 270 100% 85%;
-    
-    /* Muted Elements */
-    --muted: 220 27% 15%;
-    --muted-foreground: 180 20% 70%;
-    
-    /* Terminal Style */
-    --terminal: 120 100% 40%;
-    --terminal-bg: 220 27% 6%;
-    
-    /* Borders & Inputs */
-    --border: 180 50% 25%;
-    --input: 220 27% 12%;
-    --ring: 180 100% 50%;
-    
-    /* Error States */
-    --destructive: 0 100% 60%;
-    --destructive-foreground: 0 0% 100%;
-    
-    /* Gradients */
-    --gradient-cyber: linear-gradient(135deg, hsl(180 100% 50% / 0.2), hsl(270 100% 70% / 0.2));
-    --gradient-hero: linear-gradient(135deg, hsl(220 27% 4%), hsl(220 27% 8%));
-    --gradient-card: linear-gradient(135deg, hsl(220 27% 8% / 0.8), hsl(220 27% 12% / 0.6));
-    --gradient-glow: radial-gradient(circle, hsl(180 100% 50% / 0.3), transparent 70%);
-    
-    /* Shadows & Glows */
-    --shadow-cyber: 0 0 30px hsl(180 100% 50% / 0.3);
-    --shadow-neon: 0 0 20px hsl(120 100% 50% / 0.4);
-    --shadow-purple: 0 0 25px hsl(270 100% 70% / 0.3);
-    --shadow-glass: 0 8px 32px hsl(220 27% 4% / 0.5);
-    
-    /* Animations */
-    --transition-cyber: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --glow-pulse: 0 0 20px currentColor;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
 
-    --radius: 0.75rem;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -123,158 +94,12 @@
   }
 }
 
-/* Custom Animations & Effects */
 @layer base {
   * {
     @apply border-border;
   }
 
   body {
-    @apply bg-background text-foreground font-inter overflow-x-hidden;
-  }
-
-  /* Scrollbar Styling */
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-  
-  ::-webkit-scrollbar-track {
-    @apply bg-background;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    @apply bg-primary/30 rounded-full;
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    @apply bg-primary/50;
-  }
-
-  /* Selection Styling */
-  ::selection {
-    @apply bg-primary/30 text-foreground;
-  }
-
-  /* Glowing text effect */
-  .text-glow {
-    text-shadow: var(--glow-pulse);
-  }
-
-  /* Glass morphism effect */
-  .glass {
-    background: var(--gradient-card);
-    backdrop-filter: blur(16px) saturate(180%);
-    border: 1px solid hsl(var(--border) / 0.2);
-    box-shadow: var(--shadow-glass);
-  }
-
-  /* Cyber grid background */
-  .cyber-grid {
-    background-image: 
-      radial-gradient(circle at 50% 50%, hsl(var(--primary) / 0.1) 1px, transparent 1px),
-      linear-gradient(hsl(var(--primary) / 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(var(--primary) / 0.05) 1px, transparent 1px);
-    background-size: 100px 100px, 20px 20px, 20px 20px;
-    background-position: 0 0, 0 0, 0 0;
-  }
-
-  /* Animated background particles */
-  .particles {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    overflow: hidden;
-  }
-
-  /* Terminal cursor animation */
-  .terminal-cursor {
-    animation: blink 1.5s infinite;
-  }
-
-  @keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
-  }
-
-  /* Floating animation */
-  .floating {
-    animation: floating 6s ease-in-out infinite;
-  }
-
-  @keyframes floating {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-  }
-
-  /* Pulse glow effect */
-  .pulse-glow {
-    animation: pulse-glow 2s ease-in-out infinite alternate;
-  }
-
-  @keyframes pulse-glow {
-    from {
-      box-shadow: 0 0 20px hsl(var(--primary) / 0.5);
-    }
-    to {
-      box-shadow: 0 0 30px hsl(var(--primary) / 0.8), 0 0 40px hsl(var(--primary) / 0.3);
-    }
-  }
-
-  /* Slide up animation */
-  .slide-up {
-    animation: slide-up 0.6s ease-out;
-  }
-
-  @keyframes slide-up {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* Hover glow effect */
-  .hover-glow:hover {
-    box-shadow: var(--shadow-cyber);
-    transform: translateY(-2px);
-  }
-}
-
-/* Component Utilities */
-@layer components {
-  .btn-cyber {
-    @apply relative overflow-hidden bg-primary/10 text-primary border border-primary/30 
-           hover:bg-primary/20 hover:border-primary/60 hover:shadow-[var(--shadow-cyber)]
-           transition-all duration-300 font-medium tracking-wide;
-  }
-
-  .btn-cyber::before {
-    content: '';
-    @apply absolute inset-0 bg-gradient-to-r from-transparent via-primary/10 to-transparent
-           translate-x-[-100%] hover:translate-x-[100%] transition-transform duration-700;
-  }
-
-  .card-cyber {
-    @apply glass border border-primary/20 hover:border-primary/40 
-           transition-all duration-300 hover:shadow-[var(--shadow-cyber)];
-  }
-
-  .text-cyber {
-    @apply bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent
-           font-bold tracking-wide;
-  }
-
-  .heading-glow {
-    @apply text-glow text-primary font-bold;
-  }
-
-  .terminal-text {
-    @apply font-mono text-terminal bg-terminal-bg px-2 py-1 rounded border border-terminal/30;
+    @apply bg-background text-foreground;
   }
 }
