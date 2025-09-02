@@ -1,142 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Suresh | DevOps Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Suresh — Junior DevOps Engineer</title>
+  <meta name="description" content="Suresh — Junior DevOps Engineer. Automation, cloud infrastructure, Terraform, CI/CD and Linux. Based in Aylesbury, UK. Contact for opportunities and collaborations." />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Suresh — Junior DevOps Engineer" />
+  <meta property="og:description" content="Automation, cloud infrastructure, Terraform, CI/CD and Linux. Based in Aylesbury, UK." />
+  <meta property="og:type" content="website" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous" defer></script>
+  <!-- EmailJS (for contact form) -->
+  <script src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js" defer></script>
 </head>
 <body>
-  <canvas id="bg"></canvas>
+  <canvas id="bg" aria-hidden="true"></canvas>
 
-  <header>
-    <h1>Suresh</h1>
-    <nav id="navbar">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div class="hamburger" id="hamburger">&#9776;</div>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="#home">Suresh</a>
+
+      <nav id="navbar" class="site-nav" aria-label="Primary">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button id="hamburger" class="hamburger" aria-controls="navbar" aria-expanded="false" aria-label="Open navigation">
+        <span class="hamb-icon">&#9776;</span>
+      </button>
+    </div>
   </header>
 
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <h2>Suresh</h2>
-      <h3><span id="typing"></span></h3>
-      <div class="social-links">
-        <a href="https://linkedin.com/in/YOUR-LINKEDIN" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/YOUR-GITHUB" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="assets/Suresh_Resume.pdf" download><i class="fas fa-file-download"></i></a>
-      </div>
-    </div>
-    <div class="hero-image">
-      <img src="assets/profile.jpg" alt="Profile Picture">
-    </div>
-  </section>
+  <main>
+    <!-- HERO / HOME -->
+    <section id="home" class="hero reveal" tabindex="-1">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <p class="intro-small">Hi, my name is</p>
+          <h1 class="hero-name">Suresh<span class="dot">.</span></h1>
+          <h2 class="hero-role">I am a <span id="typing" aria-live="polite">Junior DevOps Engineer</span></h2>
+          <p class="hero-desc">Passionate about automation, cloud infrastructure and building scalable systems. Hands-on with AWS, Terraform, CI/CD and Linux. I focus on practical solutions that reduce toil and improve reliability.</p>
 
-  <section id="about" class="about reveal">
-    <h2>About Me</h2>
-    <p>I’m a Junior DevOps Engineer passionate about automation, cloud infrastructure, and building scalable systems. With hands-on experience in AWS, Terraform, and CI/CD pipelines, I focus on solving problems and delivering efficient solutions.</p>
-  </section>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#contact">Get in touch <i class="fas fa-external-link-alt btn-icon" aria-hidden="true"></i></a>
+            <a class="btn btn-outline" href="assets/Suresh_Resume.pdf" download rel="noopener noreferrer">Resume <i class="fas fa-download btn-icon" aria-hidden="true"></i></a>
+          </div>
 
-  <section id="experience" class="experience reveal">
-    <h2>Experience</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <h3>Senior Systems Associate – Infosys</h3>
-        <p>Worked on ITSM, application support, hardware asset management, ServiceNow, SCCM, Intune, and Azure.</p>
-      </div>
-      <div class="timeline-item">
-        <h3>Operations Team Lead – TCS</h3>
-        <p>Handled operational logistics, cold store management, and voice picking operations.</p>
-      </div>
-    </div>
-  </section>
+          <div class="social-row" aria-label="social links">
+            <a href="https://linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/YOUR-GITHUB" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
 
-  <section id="skills" class="skills reveal">
-  <h2>Skills</h2>
-  <div class="skills-list">
-    <div class="skill-card">
-      <h4>AWS & Cloud Infrastructure</h4>
-      <div class="skill-bar-container">
-        <div class="skill-bar" data-skill="90"></div>
+        <div class="hero-right">
+          <div class="profile-wrap" role="img" aria-label="Profile picture of Suresh">
+            <img src="assets/profile.jpg" alt="Suresh — profile" class="profile-img">
+            <div class="profile-ring" aria-hidden="true"></div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="skill-card">
-      <h4>Terraform & IaC</h4>
-      <div class="skill-bar-container">
-        <div class="skill-bar" data-skill="85"></div>
-      </div>
-    </div>
-    <div class="skill-card">
-      <h4>Linux & Scripting</h4>
-      <div class="skill-bar-container">
-        <div class="skill-bar" data-skill="80"></div>
-      </div>
-    </div>
-    <div class="skill-card">
-      <h4>CI/CD (GitHub Actions, Jenkins)</h4>
-      <div class="skill-bar-container">
-        <div class="skill-bar" data-skill="75"></div>
-      </div>
-    </div>
-    <div class="skill-card">
-      <h4>Docker & Kubernetes</h4>
-      <div class="skill-bar-container">
-        <div class="skill-bar" data-skill="70"></div>
-      </div>
-    </div>
-    <div class="skill-card">
-      <h4>Monitoring & Security</h4>
-      <div class="skill-bar-container">
-        <div class="skill-bar" data-skill="65"></div>
-      </div>
-    </div>
-  </div>
-  </section>
+    </section>
 
-  <section id="projects" class="projects reveal">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-        <img src="assets/project1.png" alt="Project 1">
-        <h3>Terraform + AWS Automation</h3>
-        <p>Deploys EC2 instances with monitoring.</p>
-      </div>
-      <div class="project-card">
-        <img src="assets/project2.png" alt="Project 2">
-        <h3>CI/CD Pipeline</h3>
-        <p>GitHub Actions and Docker for microservices.</p>
-      </div>
-      <div class="project-card">
-        <img src="assets/project3.png" alt="Project 3">
-        <h3>Kubernetes Deployment</h3>
-        <p>Cluster with monitoring and alerting stack.</p>
-      </div>
-    </div>
-  </section>
+    <!-- ABOUT -->
+    <section id="about" class="about reveal container">
+      <h2>About Me</h2>
+      <p class="about-desc">I am a Junior DevOps engineer with experience supporting cloud infrastructure, automation and operational tooling. I enjoy designing and improving CI/CD pipelines, writing reliable Terraform modules, and automating repeatable tasks. I communicate clearly with stakeholders and focus on delivering value in short iterations.</p>
 
-  <section id="contact" class="contact reveal">
-    <h2>Contact Me</h2>
-    <div class="contact-info">
-      <div class="contact-item"><i class="fas fa-map-marker-alt"></i>Aylesbury, UK</div>
-      <div class="contact-item"><i class="fas fa-phone"></i>+44 1234 567890</div>
-      <div class="contact-item"><i class="fas fa-envelope"></i>your.email@example.com</div>
-      <div class="contact-item"><i class="fas fa-file-download"></i><a href="assets/Suresh_Resume.pdf" download>Download Resume</a></div>
-    </div>
-    <div class="question-box">
-      <h3>Have a Question?</h3>
-      <a href="YOUR-GOOGLE-FORM-LINK" target="_blank">Click here</a>
-    </div>
-  </section>
+      <div class="about-stats">
+        <div class="stat-card">
+          <h3>3+ Years</h3>
+          <p>Experience</p>
+        </div>
+        <div class="stat-card">
+          <h3>5+</h3>
+          <p>Projects deployed</p>
+        </div>
+        <div class="stat-card">
+          <h3>3</h3>
+          <p>Certifications</p>
+        </div>
+      </div>
+    </section>
 
-  <footer>
-    <p>&copy; 2025 Suresh | All Rights Reserved</p>
+    <!-- EXPERIENCE -->
+    <section id="experience" class="experience reveal container">
+      <h2>Experience</h2>
+
+      <div class="exp-list">
+        <article class="exp-item">
+          <div class="exp-head">
+            <h3 class="role">Senior Systems Associate</h3>
+            <div class="company">Infosys <span class="period"> · 2021 — 2024</span></div>
+          </div>
+          <p class="exp-desc">Provided application and infrastructure support, managed hardware asset lifecycle, maintained ServiceNow and device management with SCCM and Intune. Focused on incident resolution, root cause and automation of repeatable tasks.</p>
+          <div class="exp-tools">
+            <span>Tools:</span>
+            <ul class="tool-list">
+              <li>AWS</li><li>ServiceNow</li><li>SCCM</li><li>Intune</li><li>Shell/Python</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="exp-item">
+          <div class="exp-head">
+            <h3 class="role">Operations Team Lead</h3>
+            <div class="company">Tata Consultancy Services <span class="period"> · 2019 — 2021</span></div>
+          </div>
+          <p class="exp-desc">Led operational logistics and voice picking teams; improved processes to reduce errors and improved on-time completion. Coordinated with cross-functional stakeholders to maintain SLAs in high-pressure environments.</p>
+          <div class="exp-tools">
+            <span>Tools:</span>
+            <ul class="tool-list">
+              <li>Logistics systems</li><li>Operational dashboards</li><li>Excel / Reporting</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="skills reveal container">
+      <h2>Skills</h2>
+
+      <div class="skills-grid">
+        <div class="skill-block">
+          <h4>Cloud & Infrastructure</h4>
+          <ul class="skill-list">
+            <li>AWS <span class="percent">90%</span>
+              <div class="bar"><div class="bar-fill" data-skill="90"></div></div>
+            </li>
+            <li>Terraform <span class="percent">85%</span>
+              <div class="bar"><div class="bar-fill" data-skill="85"></div></div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="skill-block">
+          <h4>DevOps & Automation</h4>
+          <ul class="skill-list">
+            <li>CI/CD (GitHub Actions, Jenkins) <span class="percent">80%</span>
+              <div class="bar"><div class="bar-fill" data-skill="80"></div></div>
+            </li>
+            <li>Docker & Kubernetes <span class="percent">75%</span>
+              <div class="bar"><div class="bar-fill" data-skill="75"></div></div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="skill-block">
+          <h4>Scripting & Development</h4>
+          <ul class="skill-list">
+            <li>Shell / Bash <span class="percent">85%</span>
+              <div class="bar"><div class="bar-fill" data-skill="85"></div></div>
+            </li>
+            <li>Python <span class="percent">70%</span>
+              <div class="bar"><div class="bar-fill" data-skill="70"></div></div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="skill-block">
+          <h4>Monitoring & Security</h4>
+          <ul class="skill-list">
+            <li>Prometheus / Grafana <span class="percent">70%</span>
+              <div class="bar"><div class="bar-fill" data-skill="70"></div></div>
+            </li>
+            <li>Security tools (Qualys, basic hardening) <span class="percent">60%</span>
+              <div class="bar"><div class="bar-fill" data-skill="60"></div></div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="skill-block">
+          <h4>Databases & Storage</h4>
+          <ul class="skill-list">
+            <li>RDS, S3, EBS <span class="percent">75%</span>
+              <div class="bar"><div class="bar-fill" data-skill="75"></div></div>
+            </li>
+            <li>NoSQL (DynamoDB) <span class="percent">65%</span>
+              <div class="bar"><div class="bar-fill" data-skill="65"></div></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS (simple grid) -->
+    <section id="projects" class="projects reveal container">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <img src="assets/project1.png" alt="Terraform + AWS Automation" loading="lazy">
+          <h3>Terraform + AWS Automation</h3>
+          <p>Reusable Terraform modules to deploy EC2, monitoring and alerts. Built with modular approach and state management.</p>
+          <div class="project-links">
+            <a href="#" rel="noopener noreferrer" target="_blank">Repo</a>
+            <a href="#" rel="noopener noreferrer" target="_blank">Live</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="assets/project2.png" alt="CI/CD Pipeline" loading="lazy">
+          <h3>CI/CD Pipeline</h3>
+          <p>GitHub Actions pipeline with Docker build, test and deployment to ECS / Kubernetes.</p>
+          <div class="project-links">
+            <a href="#" rel="noopener noreferrer" target="_blank">Repo</a>
+            <a href="#" rel="noopener noreferrer" target="_blank">Docs</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact reveal container">
+      <h2>Get in touch</h2>
+      <p class="contact-intro">I am open to part-time and full-time opportunities in the UK and remote collaboration. If you'd like to discuss a role or a project, send a message below or use the contact details.</p>
+
+      <div class="contact-grid">
+        <div class="contact-left">
+          <h3>Let's connect</h3>
+          <div class="contact-card">
+            <div class="c-item"><i class="fas fa-map-marker-alt"></i><span>Aylesbury, UK</span></div>
+            <div class="c-item"><i class="fas fa-phone-alt"></i><a href="tel:+441234567890">+44 1234 567890</a></div>
+            <div class="c-item"><i class="fas fa-envelope"></i><a href="mailto:your.email@example.com">your.email@example.com</a></div>
+            <div class="c-item"><i class="fas fa-file-download"></i><a href="assets/Suresh_Resume.pdf" download rel="noopener noreferrer">Download Resume</a></div>
+          </div>
+        </div>
+
+        <div class="contact-right">
+          <h3>Send a message</h3>
+          <form id="contact-form" class="contact-form">
+            <label for="name">Name</label>
+            <input id="name" name="from_name" required>
+
+            <label for="email">Email</label>
+            <input id="email" name="from_email" type="email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+
+            <button class="btn btn-primary" type="submit">Send Message</button>
+            <div id="form-status" aria-live="polite"></div>
+          </form>
+          <small class="emailjs-note">This form uses EmailJS. Replace the service and template IDs in the script.js file.</small>
+        </div>
+      </div>
+
+      <div class="follow">
+        <h3>Follow me</h3>
+        <div class="social-row">
+          <a href="https://linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <a href="https://github.com/YOUR-GITHUB" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+          <a href="assets/Suresh_Resume.pdf" download rel="noopener noreferrer"><i class="fas fa-download"></i> Resume</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Suresh — All rights reserved</p>
+    </div>
   </footer>
 
   <script src="script.js"></script>
