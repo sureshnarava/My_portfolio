@@ -78,6 +78,14 @@ section{padding:3.5rem 0}
 h2{font-family:var(--heading);font-size:1.9rem;color:var(--accent-1);text-transform:none;margin-bottom:1rem}
 
 /* About */
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;   /* center text */
+  padding: 80px 20px;
+}
 .about-desc{color:var(--muted);max-width:70ch;margin-bottom:1.5rem}
 .about-stats{display:flex;gap:1rem;flex-wrap:wrap}
 .stat-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:1.1rem;border-radius:10px;min-width:160px;text-align:center;box-shadow:0 8px 30px rgba(0,0,0,0.35)}
@@ -85,6 +93,11 @@ h2{font-family:var(--heading);font-size:1.9rem;color:var(--accent-1);text-transf
 .stat-card p{color:var(--muted)}
 
 /* Experience */
+
+.experience h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
 .exp-list{display:grid;gap:1rem}
 .exp-item{background:var(--card);padding:1rem;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,0.45)}
 .exp-head{display:flex;flex-direction:column;gap:.25rem;margin-bottom:.6rem}
@@ -95,26 +108,52 @@ h2{font-family:var(--heading);font-size:1.9rem;color:var(--accent-1);text-transf
 .tool-list li{background:rgba(255,255,255,0.03);padding:.4rem .6rem;border-radius:999px;font-size:.9rem;color:var(--muted)}
 
 /* Skills */
-.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.skills h2 {text-align: center;margin-bottom: 2rem;}
+.skills-grid {display: grid;grid-template-columns: repeat(3, 1fr); /* Always 3 per row */gap: 1.5rem;justify-items: center;}
+.skill-block {background: var(--card);padding: 1rem;border-radius: 10px;width: 100%;max-width: 280px; /* Keeps consistent width */}
+.skill-list {list-style: none;padding: 0;margin: 0;display: flex;flex-direction: column;gap: .7rem;}
+.skill-list li {display: block;color: var(--muted);font-size: .95rem;}
+.percent {float: right;color: var(--muted);font-weight: 600;}
+.bar {height: 10px;background: rgba(255, 255, 255, 0.03);border-radius: 8px;margin-top: .4rem;overflow: hidden;}
+.bar-fill {height: 100%;width: 0;background: linear-gradient(90deg, var(--accent-1), var(--accent-2));border-radius: 8px;transition: width 1.6s ease;}
+
+/* Center last row (2 blocks) */
+.skills-grid > :nth-last-child(2),.skills-grid > :last-child {grid-column: span 1;justify-self: center;}
+
+/*.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
 .skill-block{background:var(--card);padding:1rem;border-radius:10px}
 .skill-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.7rem}
 .skill-list li{display:block;color:var(--muted);font-size:.95rem}
 .percent{float:right;color:var(--muted);font-weight:600}
 .bar{height:10px;background:rgba(255,255,255,0.03);border-radius:8px;margin-top:.4rem;overflow:hidden}
 .bar-fill{height:100%;width:0;background:linear-gradient(90deg,var(--accent-1),var(--accent-2));border-radius:8px;transition:width 1.6s ease}
-
+*/
 /* Projects */
+.projects h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
 .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
 .project-card{background:var(--card);padding:1rem;border-radius:10px}
-.project-card img{width:100%;height:160px;object-fit:cover;border-radius:8px;margin-bottom:.6rem}
+.project-card img{width:100%;height:300px;object-fit:fill;border-radius:8px;margin-bottom:.6rem}
 .project-links{display:flex;gap:.6rem;margin-top:.6rem}
 .project-links a{color:var(--accent-1);text-decoration:none}
 
 /* Contact */
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;align-items:start;margin-top:1rem}
+
+/*.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;align-items:start;margin-top:1rem}
 .contact-card{background:var(--card);padding:1rem;border-radius:10px}
 .c-item{display:flex;gap:.7rem;align-items:center;padding:.5rem 0;color:var(--muted)}
-.c-item i{color:var(--accent-1)}
+.c-item i{color:var(--accent-1)} */
+
+/* Contact */
+.contact-grid {display: grid;grid-template-columns: 1fr 1fr;gap: 1.25rem;align-items: start;margin-top: 1rem;}
+.contact-card {background: var(--card);padding: 1.2rem;border-radius: 10px;box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);}
+.c-item {display: flex;gap: 0.8rem;align-items: center;padding: 0.6rem 0;font-size: 0.95rem;color: var(--muted);transition: color 0.3s ease;}
+.c-item i {background: linear-gradient(135deg, var(--accent-1), var(--accent-2));color: #fff;border-radius: 50%;padding: 0.5rem;font-size: 1rem;display: flex;align-items: center;justify-content: center;min-width: 36px;min-height: 36px;box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);transition: transform 0.3s ease, box-shadow 0.3s ease;}
+.c-item i:hover {transform: scale(1.1);box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);}
+.c-item a {color: var(--muted);text-decoration: none;transition: color 0.3s ease;}
+.c-item a:hover {color: var(--accent-1);}
 .contact-form{display:flex;flex-direction:column;gap:.6rem}
 .contact-form input,.contact-form textarea{padding:.6rem;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#fff}
 .contact-form label{font-weight:600;color:var(--muted);font-size:.9rem}
