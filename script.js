@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize EmailJS - replace 'YOUR_EMAILJS_USER_ID' with your EmailJS user id
   if (typeof emailjs !== 'undefined') {
     try {
-      emailjs.init('YOUR_EMAILJS_USER_ID'); // <-- replace
+      emailjs.init('E0DvwYrNJypi6nk_V'); // <-- replace
     } catch (e) {
       // ignore init errors
     }
@@ -158,17 +158,17 @@ document.addEventListener('DOMContentLoaded', () => {
       status.textContent = 'Sending...';
 
       // Replace service ID and template ID with your EmailJS values
-      const SERVICE_ID = 'YOUR_SERVICE_ID';
-      const TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
+      const SERVICE_ID = 'service_xuy8dhl';
+      const TEMPLATE_ID = 'template_opxkuye';
 
-      if (typeof emailjs === 'undefined' || SERVICE_ID === 'YOUR_SERVICE_ID') {
+      if (typeof emailjs === 'undefined') {
         // fallback: simple mailto link if EmailJS not configured
         status.textContent = 'Email service not configured. Installing EmailJS is recommended.';
         // For user convenience, open the mail client
         const name = form.from_name.value || '';
         const mail = form.from_email.value || '';
         const msg = form.message.value || '';
-        window.location.href = `mailto:your.email@example.com?subject=Contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(msg + '\n\nFrom: ' + mail)}`;
+        window.location.href = `mailto:sureshbabunarava@gmail.com?subject=Contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(msg + '\n\nFrom: ' + mail)}`;
         return;
       }
 
